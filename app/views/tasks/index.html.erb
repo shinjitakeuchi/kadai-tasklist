@@ -12,6 +12,7 @@
     </thead>
     <tbody>
     <% @tasks.each do |task| %>
+    
       <tr>
         <td><%= link_to task.id, task %></td>
         <td><%= task.status %></td>
