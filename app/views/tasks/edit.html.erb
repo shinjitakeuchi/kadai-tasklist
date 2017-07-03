@@ -1,4 +1,19 @@
 <h1>id: <%= @task.id %> タスクの編集</h1>
 
-<%= render 'form', task: @task %>
+<div class="row">
+    <aside class="col-md-4">
+      <%= form_for(@task) do |f| %>
+        <div class="form-group">
+          <%= f.label :status, 'ステータス' %>
+          <%= f.text_area :status, class: 'form-control', rows: 1 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :content, 'タスク' %>
+          <%= f.text_area :content, class: 'form-control', rows: 2 %>
+        </div>
+        
+          <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <% end %>  
+    </aside>
+  </div>
   
