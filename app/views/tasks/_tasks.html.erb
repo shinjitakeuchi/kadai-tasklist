@@ -10,13 +10,17 @@
           <%= link_to user.name, user_path(user) %><span class="text-muted"> posted at <%= task.created_at %></span>
         </div> 
         <div>
-          <p>Status: <%= task.status %></p>
-          <p>Task: <%= task.content %></p>
+          <table class="table-condensed">
+            <td>ステータス： </td>
+            <td><%= task.status %></td>
+            <td>タスク： </td>
+            <td><%= task.content %></td>
+          </table>
         </div>
         <div>
             <% if current_user == task.user %>
-              <%= link_to "Edit", class: 'btn btn-default' %>
-              <%= link_to "Delete", task, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+              <%= link_to "Edit", edit_task_path, class: 'btn' %>
+              <%= link_to "Delete", task, method: :delete, data: { confirm: "本当に削除しますか?" }, class: 'btn btn-danger btn-xs' %>
             <% end %>      
         </div>
       </div>

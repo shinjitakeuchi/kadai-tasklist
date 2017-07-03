@@ -1,13 +1,4 @@
 <h1>id: <%= @task.id %> タスクの編集</h1>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :status, 'ステータス' %>
-  <%= f.text_field :status %>
-  
-  <%= f.label :content, 'タスク' %>
-  <%= f.text_field :content %>
-  
-  <%= f.submit '登録', class: 'btn btn-primary' %>
-
-<% end %>
+<%= render 'form', task: @task %>
   
