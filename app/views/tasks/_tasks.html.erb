@@ -19,7 +19,7 @@
         </div>
         <div>
             <% if current_user == task.user %>
-              <%= link_to "Edit", edit_task_path, class: 'btn' %>
+              <%= link_to "Edit", edit_task_path(task), class: 'btn' %>
               <%= link_to "Delete", task, method: :delete, data: { confirm: "本当に削除しますか?" }, class: 'btn btn-danger btn-xs' %>
             <% end %>      
         </div>
