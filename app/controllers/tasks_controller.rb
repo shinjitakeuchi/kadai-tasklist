@@ -7,7 +7,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    @tasks=Task.all.page(params[:page])
   end 
   
   def new
@@ -29,14 +28,13 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @task = Task.find(params[:id])
+    @tasks = Task.all.page(params[:page])
   end
   
   def update
     if @task.update(task_params)
       flash[:success]='タスクが正常にupdateされました'
-      redirect_to @task
-    
+      redirect_to edit_task_path
     else 
       flash.now[:danger]='タスクのupdateに失敗しました！'
       render :edit
